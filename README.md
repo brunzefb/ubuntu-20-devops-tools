@@ -1,5 +1,5 @@
 ###  ubuntu-20-devops-tools
-This repo contains support files to create a devops environment on Ubuntu 20.04.
+This repo contains support files to create a devops environment on Ubuntu 20.04. The tools are all open-source.
 
 
 ### VirtualBox Ubuntu 20.04 LTS Setup
@@ -98,7 +98,7 @@ kubescape | 2.0.149 | Open source K8s security scanner.
 docker | 20.10.17 | To manage containers and build images.
 exa | 010.1 | Prettier, clearer ls utility.
 
-### Installed Krew plugins (suset of useful ones shown)
+### Installed Krew plugins (subset of useful ones shown)
 Name | Comments
 :--- | :---
 kubectl neat | Cleans up yaml rendered by -oyaml.
