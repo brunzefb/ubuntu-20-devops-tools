@@ -12,7 +12,7 @@ export TERM=xterm-256color
 export TILLER_NAMESPACE=tiller
 export UPDATE_ZSH_DAYS=30
 export ZSH_THEME=inspiration
-export ZSH=/home/ubuntu/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 export ZSHZ_CMD='j'
 
 # env, not exported
@@ -36,7 +36,7 @@ alias ls='exa -la'
 alias md=mkdir
 alias prettyjson='python -m json.tool'
 alias tree="exa -T"
-alias clip='nc -N localhost 8377'
+alias clip='xclip'
 alias kgp='kubectl get pod'
 alias kgs='kubectl get service'
 alias kgt='kubectl get secret'
@@ -126,7 +126,7 @@ function start_agent {
     eval `/usr/bin/ssh-agent -s` && sleep 2
     echo succeeded
     chmod 600 "${SSH_ENV}"
-    ssh-add automergeuser.pem
+    ssh-add id_rsa
     cd $OLDPWD
 }
 

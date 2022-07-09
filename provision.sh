@@ -23,6 +23,7 @@ function install_base_packages() {
       unzip \
       ssh \
       less \
+      xclip \
       zsh \
       bc \
       netcat \
@@ -67,7 +68,7 @@ function install_helm() {
   # helm3
   curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
   sudo bash get_helm.sh && rm get_helm.sh
-  helm3 plugin install https://github.com/hickeyma/helm-mapkubeapis
+  helm plugin install https://github.com/hickeyma/helm-mapkubeapis
 }
 
 
@@ -273,14 +274,17 @@ function export_software_versions() {
 
 function finish_up() {
   touch ~/.ssh/environment
-  mkdir ~/git
   cp $HOME/git/ubuntu-20-devops-tools/.gitconfig ~/.gitconfig
-
-  sudo git config --global user.name "user"
-  sudo git config --global user.email "user@company.com"
+  figlet "One-Time Setup for Git" -w 200
+  printf "Enter user name (e.g. John Doe) for git: "
+  read -r username
+  printf "Enter user email for git: "
+  read -r email
+  sudo git config --global user.name "$username"
+  sudo git config --global user.email "$email"
   cp $HOME/git/ubuntu-20-devops-tools/inspiration.zsh-theme $HOME/.oh-my-zsh/themes/inspiration.zsh-theme
-  ssh-keygen -b 2048 -t rsa -f $HOME/.ssh/ -q
-  chmod 600 $HOME/.ssh/*.pem
+  ssh-keygen -b 2048 -t rsa -f $HOME/.ssh/id_rsa -q
+  chmod 600 ~/.ssh/id_rsa
 }
 
 function main() {
