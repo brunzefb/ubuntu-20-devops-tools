@@ -148,3 +148,6 @@ git squash | Does interactive rebase from where you branched from develop branch
 git current | Shows the sha1 of the HEAD commit.
 git cob | Equivalent to git checkout -b.
 
+## Git with ssh
+The script will create a ~/.ssh/id_rsa (private key) and ~/.ssh/id_rsa.pub (public key).  More info about github and ssh can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
