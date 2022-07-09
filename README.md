@@ -4,8 +4,7 @@ This repo contains support files to create a devops environment on Ubuntu 20.04.
 
 ### VirtualBox Ubuntu 20.04 LTS Setup
 Please follow the instructions in this video to set up your VM. The
-instructions are for a Windows host, but should also work for Mac/Linux.
-
+instructions are for a Windows host, but should also work for Mac/Linux. I suggest watching this even if you know what you are doing.
 [Instructions to install Ubuntu on Oracle Virtual Box](https://www.youtube.com/watch?v=x5MhydijWmc)
 
 ### Additional information needed for the Virtual Box setup
