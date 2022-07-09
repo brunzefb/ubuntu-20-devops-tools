@@ -155,10 +155,10 @@ bindkey "^R" history-incremental-search-backward
 export AWS_REGION=us-east-2
 
 # AWS - connect to EKS cluster
-export EKS_CLUSTER_NAME=$(aws eks list-clusters --region $AWS_REGION | jq -r '.clusters[0]')
-aws sts get-caller-identity && aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
-kubectl config set-context --current --namespace=$DEFAULT_NAMESPACE
-chmod 600 ~/.kube/config
+# export EKS_CLUSTER_NAME=$(aws eks list-clusters --region $AWS_REGION | jq -r '.clusters[0]')
+# aws sts get-caller-identity && aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+# kubectl config set-context --current --namespace=$DEFAULT_NAMESPACE
+# chmod 600 ~/.kube/config
 
 # setup syntax highlighting (valid commands turn green as you type)
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
