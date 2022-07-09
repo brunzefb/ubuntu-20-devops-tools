@@ -272,6 +272,36 @@ function export_software_versions() {
   export LANGUAGE=en_US.UTF-8
 }
 
+function install_vscode_extensions() {
+  code --install-extension 4ops.packer
+  code --install-extension adamhartford.vscode-base64
+  code --install-extension bibhasdn.unique-lines
+  code --install-extension dotjoshjohnson.xml
+  code --install-extension editorconfig.editorconfig
+  code --install-extension euskadi31.json-pretty-printer
+  code --install-extension fabiospampinato.vscode-open-in-terminal
+  code --install-extension hashicorp.terraform
+  code --install-extension mohsen1.prettify-json
+  code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+  code --install-extension ms-python.python
+  code --install-extension rafamel.subtle-brackets
+  code --install-extension rebornix.ruby
+  code --install-extension shaimendel.kubernetesapply
+  code --install-extension slevesque.vscode-hexdump
+  code --install-extension tht13.html-preview-vscode
+  code --install-extension wmaurer.vscode-jumpy
+  code --install-extension wwm.better-align
+  code --install-extension yuichinukiyama.tabspacer
+  code --install-extension eamodio.gitlens
+  code --install-extension adamhartford.vscode-base64
+  code --install-extension slevesque.vscode-hexdump
+  code --install-extension redhat.vscode-yaml
+  code --install-extension Tyriar.sort-lines
+  code --install-extension ms-vscode-remote.remote-containers
+  code --install-extension ms-vscode-remote.remote-ssh
+  }
+
+
 function finish_up() {
   touch ~/.ssh/environment
   cp $HOME/git/ubuntu-20-devops-tools/.gitconfig ~/.gitconfig
@@ -317,6 +347,7 @@ function main() {
   install_vim_pathogen
   install_docker_in_docker
   install_exa
+  install_vs_code_extensions
 
   finish_up
 }
