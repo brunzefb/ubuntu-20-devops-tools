@@ -23,7 +23,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 ```
 
 ### After completing the Virtual Box setup
-## Install git
+### Install git
 In a terminal run:
 ```
 sudo apt-get install -y git
