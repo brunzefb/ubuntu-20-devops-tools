@@ -71,6 +71,7 @@ ssh | Ssh client.
 xclip | Command line tool that allows copying to clipboard, alias=clip
 python3 pip | To install python libs.
 zsh | Installs an alternate shell to bash.
+curl | Command line REST utility.
  
 
 
