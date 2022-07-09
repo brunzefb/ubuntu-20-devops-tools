@@ -53,7 +53,7 @@ bash provision.sh
 ```
 
 ### What does the script install in terms of standard Ubuntu packages that is interesting?
-Package name | Comments
+Package name | :Comments
 --- | --- |
 build_essential | Compiler needed to build tools.
 wget | Tool to do a REST get from an HTTP(s) server.
