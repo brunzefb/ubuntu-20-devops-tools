@@ -11,7 +11,7 @@ instructions are for a Windows host, but should also work for Mac/Linux. I sugge
 [Link to downlod Ubuntu 20.04 ISO](https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso) 
 
 * 4096mb memory (more is OK)
-* 35Gb disk  (more is OK)
+* 35Gb disk (more is OK)
 * 2 Virtual CPU's (more is OK)
 
 ### Todo before installing VirtualBox Guest additions
@@ -127,4 +127,24 @@ better-align | Allows alignment of code.
 tabspacer | Helps convert tabs to spaces and vice versa.
 git lens | Mostly useful for git diffs directly in vscode.
 yaml | Yaml language support for vscode.
+
+## Other features
+* Syntax highlighting in the terminal, see [here](https://linuxhint.com/enable-syntax-highlighting-zsh/)
+* Supercharged 'cd' command, zsh-z aliased to 'j', see [here](https://github.com/agkozak/zsh-z)
+* useful git shortcuts (stored in ~/.gitconfig)
+
+## Useful git aliases (you can see them all in ~/.gitconfig)
+Name | What it does
+:--- | :---
+git addall | Equivalent to git add . --all
+git st | Equivalent to git status
+git cm "msg" | Equivalent to git -am "msg"
+git branch-name | equivalent to git rev-parse --abbrev-ref HEAD
+git publish | Pushes new branch to origin, equivalent to git push -u origin [current branch]
+git unpublish | Deletes the branch on the server, equivalent to git push -u :branch
+git co | Equivalent to git checkout
+git conflicts | Shows conflicted files, diff --name-only --diff-filter=U
+git squash | Does interactive rebase from where you branched from develop branch
+git current | Shows the sha1 of the HEAD commit.
+git cob | Equivalent to git chekout -b
 
