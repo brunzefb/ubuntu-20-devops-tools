@@ -1,0 +1,58 @@
+[user]
+	
+[core]
+	autocrlf = false
+	editor = vim
+[push]
+	default = simple
+
+[alias]
+diverges = !sh -c 'git rev-list --boundary $1...$2 | grep "^-" | cut -c2-'
+lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold white)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 20
+lgfp= log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold white)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 20 --first-parent --no-merges
+lgm = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold white)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 20 master
+lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold white)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+lg3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold white)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all -n 20 .
+lg = !"git lg1"
+logbr=!"git  log --pretty=oneline --graph --abbrev-commit --decorate  --first-parent $(git rev-parse --abbrev-ref HEAD)"
+st = "!f() { git status; }; f"
+sti = "!f() { git status --ignored; }; f"
+stl = lfs status
+clearindex = rm -r --cached
+ignored = clean -ndX
+cm = !"git add -A && git commit -m"
+wt = !"git worktree"
+cob = checkout -b
+cl = clean -dfX
+conflicts = diff --name-only --diff-filter=U
+addall = add . --all
+ahead = !sh -c \"git fetch origin develop  && echo 'Number of commits develop ahead of origin/develop' && git rev-list develop --not origin/develop --count && echo 'Number of commits remote(origin/develop) is ahead of develop' && git rev-list origin/develop --not develop --count \"
+mergemine = !"git merge -s recursive -X ours" origin/develop
+lgm = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold white)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 20 origin/develop..
+lgd = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold white)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 20 origin/master..
+mergetheirs = !"git merge -s recursive -X theirs origin/develop"
+donttrack = update-index --assume-unchanged
+sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+sapply = "!f() { git stash apply stash^{/$*}; }; f"
+current = rev-parse --short HEAD
+oldest-ancestor = !zsh -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-develop}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+squash = !sh -c \"git rebase -i HEAD~`git rev-list --count HEAD ^develop` \"
+publish = "!git push -u origin $(git branch-name)"
+branch-name = "!git rev-parse --abbrev-ref HEAD"
+list-tags = "!git  for-each-ref --sort=creatordate --format '%(refname) %(creatordate)' refs/tags"  
+unpublish = "!git push -u origin :$(git branch-name)"
+cpr = !sh -c 'stash pull-request $(git branch-name) develop $@'
+co = checkout
+[http]
+	sslVerify = false
+[color]
+	ui = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false

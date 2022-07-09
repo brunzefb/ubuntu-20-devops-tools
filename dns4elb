@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+from socket import gethostbyname, gaierror
+import time
+import sys
+import socket
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def main(dns, elb):
+    try:
+        dnsaddr = socket.gethostbyname_ex(dns)[2]
+        elbaddr = socket.gethostbyname_ex(elb)[2]
+        if (dnsaddr[0] in elbaddr):
+            print ("%sDNS and ELB point to the same IP address%s %s and %s" % (bcolors.OKGREEN, bcolors.ENDC, dnsaddr, elbaddr))
+        else:
+            print ("%sNot matching!%sq dns=%s, elb=%s \n" % (bcolors.FAIL, bcolors.ENDC, dnsaddr, elbaddr))
+    except gaierror:
+        print("%sDNS record(s) do not exist!%" % (bcolors.FAIL, bcolors.ENDC))
+        exit
+
+if __name__ == '__main__':
+    main(sys.argv[1], sys.argv[2])
