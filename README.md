@@ -11,7 +11,7 @@ instructions are for a Windows host, but should also work for Mac/Linux. I sugge
 [Link to downlod Ubuntu 20.04 ISO](https://releases.ubuntu.com/20.04/ubuntu-20.04.4-live-server-amd64.iso) 
 
 * 4096mb memory (more is OK)
-* 35Gb disk (more is OK)
+* 35Gb disk (more is OK)  OS and tools will use about 15gb
 * 2 Virtual CPU's (more is OK)
 
 ### Todo before installing VirtualBox Guest additions
