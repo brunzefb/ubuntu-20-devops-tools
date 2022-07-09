@@ -53,8 +53,8 @@ bash provision.sh
 ```
 
 ### What does the script install in terms of standard Ubuntu packages that is interesting?
-Package name | :Comments
---- | --- |
+Package name | Comments
+:--- | :--- |
 build_essential | Compiler needed to build tools.
 wget | Tool to do a REST get from an HTTP(s) server.
 figlet | Tool to display large text titles.
@@ -76,7 +76,7 @@ zsh | Installs an alternate shell to bash.
 
 ### Other devops tools that are installed:
 Tool Name | Version | Comments
----|---|---
+:---|:---|:---
 git | latest | Clones the git repo, and recompiles and installs it.  Newer version needed for sparse checkouts.
 aws_cli | 2.4.27| AWS command line utility.
 kubectl | 1.22.2 | To control Kubernetes/EKS clusters. For K8s v 1.22.
@@ -99,7 +99,7 @@ exa | 010.1 | Prettier, clearer ls utility.
 
 ### Installed Krew plugins (suset of useful ones shown)
 Name | Comments
---- | ---
+:--- | :---
 kubectl neat | Cleans up yaml rendered by -oyaml.
 kubectl ns | Switches default namespaces. Shows current ns.
 kubectl deprecations | Shows K8s API deprecations.
@@ -109,7 +109,7 @@ kubectl view-secret | Dumps secrets with built-in base64 decoding.
 
 ##  Installed Visual Studio Code Extensions
 Name | What it does
---- | ---
+:--- | :---
 Packer | Provides syntax highlighting for .pkr.hcl files.
 vscode-base64 | Allows in-place base64 encoding/decoding.  Useful in dealing with secrets.
 unique-lines | Removes duplicate lines.
