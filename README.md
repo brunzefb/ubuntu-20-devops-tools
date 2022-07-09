@@ -149,5 +149,5 @@ git current | Shows the sha1 of the HEAD commit.
 git cob | Equivalent to git checkout -b.
 
 ## Git with ssh
-The script will create a ~/.ssh/id_rsa (private key) and ~/.ssh/id_rsa.pub (public key).  More info about github and ssh can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+The script will create a ~/.ssh/id_rsa (private key) and ~/.ssh/id_rsa.pub (public key). The .zshrc will start an ssh agent and load the key, but for things to work you must upload your public key to Github or git provider. More info about github and ssh can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
