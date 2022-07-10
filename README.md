@@ -48,7 +48,7 @@ git clone https://github.com/friedrich-brunzema/ubuntu-20-devops-tools.git
 Review the provision.sh script first, then
 
 ```
-cd ubuntu-20-devops-tools.git
+cd $HOME/git/ubuntu-20-devops-tools
 bash provision.sh
 ```
 
