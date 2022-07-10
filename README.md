@@ -159,7 +159,7 @@ VSCode will open a bash shell by default.  You can either type zsh to get the zs
 4. Pick zsh
 
 ## Python script utilites
-To use these, you should copy them to a place like ~/.local/bin
+To use these, you should make sure they are executable (chmod +x) and copy them to a place like ~/.local/bin
 Script name | What it does | Example
 :--- | :--- | :---
 dns4elb | This script allows you to check if an amazon elb dns name corresponds to a dns name. When using ingress on AWS EKS, the ingress points to a ELB/ALB loadbalancer name, but also usually has a DNS name.  The external-dns deployment takes care of creating and pointing the DNS name to the ELB/ALB.  To make sure the assignent happened, you can use this utility, which looks up the IP's and compares them. | dns4lb foo.myhost.com c9287718dbf8d453db55e7628ce240b8-173467794.us-east-2.elb.amazonaws.com 
