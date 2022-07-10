@@ -158,3 +158,9 @@ VSCode will open a bash shell by default.  You can either type zsh to get the zs
 3. Search for “Terminal: Select Default Profile” (previously “Terminal: Select Default Shell”)
 4. Pick zsh
 
+## Python script utilites
+To use these, you should copy them to a place likr ~/.local/bin
+Script name | What it does | Example
+:--- | :--- | :---
+dns4elb | This script allows you to check if an amazon elb dns name corresponds to a dns name. When using ingress on AWS EKS, the ingress points to a ELB/ALB loadbalancer name, but also usually has a DNS name.  The external-dns deployment takes care of creating and pointing the DNS name to the ELB/ALB.  To make sure the assignent happened, you can use this utility, which looks up the IP's and compares them. | dns4lb foo.myhost.com c9287718dbf8d453db55e7628ce240b8-173467794.us-east-2.elb.amazonaws.com 
+wait4dns | This is useful when your company DNS updates are slow.  After publishing a new service, Route53 will publish the new name, but this takes some time to propagate to your ISP's domain name server or company DNS if you are on a VPN.  Propagation can take a while (sometimes 15 mins or more), and you typically want to know when the record is available so that you can use the service. wait4dns does an automatic dns lookup every second, and exits when the name is available. If the dns entry is there, it will exit immediately.| wait4dns google.ca
