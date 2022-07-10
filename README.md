@@ -18,7 +18,7 @@ instructions are for a Windows host, but should also work for Mac/Linux. I sugge
 In a terminal run: (Super+Ctrl+T to launch Terminal) 
 
 ```
-sudo apt install build-essential dkms linux-headers-$(uname -r)
+sudo apt install -y build-essential dkms linux-headers-$(uname -r)
 ```
 
 ### After completing the Virtual Box setup
