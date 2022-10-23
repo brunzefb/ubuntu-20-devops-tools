@@ -148,8 +148,7 @@ function install_oh_my_zsh() {
   wget --quiet https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
   git clone https://github.com/agkozak/zsh-z ~/.oh-my-zsh/plugins/zsh-z
-  cp $HOME/git/ubuntu-20-devops-tools/.zshrc ~/.zshrc
-
+  git clone https://github.com/superbrothers/zsh-kubectl-prompt.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-kubectl-prompt
 }
 
 function install_vim_pathogen() {

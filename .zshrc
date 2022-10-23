@@ -15,6 +15,7 @@ export UPDATE_ZSH_DAYS=30
 export ZSH_THEME=inspiration
 export ZSH=~/.oh-my-zsh
 export ZSHZ_CMD='j'
+export RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 # env, not exported
 SSH_ENV=$HOME/.ssh/environment
@@ -22,7 +23,7 @@ CASE_SENSITIVE="true"
 DISABLE_CORRECTION="true"
 
 # zsh plugins
-plugins=(git colorize pip python zsh-z)
+plugins=(git colorize pip python zsh-z zsh-kubectl-prompt)
 
 # load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -30,9 +31,6 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias j=zshz 2>&1
 alias k=kubectl
-alias listext='find . -not -iwholename "*.git*" -type f | egrep -i -E -o "\.{1}\w*$" | sort | uniq -c | sort -rn'
-alias listlarge='find . -xdev -not -iwholename "*git*" -type f -size +100k -exec ls -lh {} \;'
-alias listupperext='find . -xdev -not -iwholename "*.git*" -type f | egrep -o -E "\.{1}\b[A-Z]\w*\b$" | sort | uniq -c'
 alias ls='exa -la'
 alias md=mkdir
 alias prettyjson='python -m json.tool'
@@ -73,54 +71,6 @@ function epod() {
   kubectl exec -it $pod -- sh
 }
 
-function findext() {
-    str='*.'
-    str2=$str$1
-    find . -type f -not -iwholename "*.git*" -name "$str2" -exec ls -lh {} \;
-}
-
-function fex1 () {
-    str='*.'
-    str2=$str$1
-    vim "`find . -type f -not -iwholename "*.git*" -name "$str2" -print | sed '1!d;q'`"
-}
-
-function display_ignore(){
-  if [ -d "testignore" ]; then
-    rm -rf testignore
-  fi
-  mkdir testignore
-  find . -not -iwholename "*.git*" -type f | egrep -i -E -o "\.{1}\w*$" | sort | uniq > extlist.txt
-  while IFS='' read -r line || [[ -n "$line" ]]; do
-    touch ./testignore/f$line
-  done < extlist.txt
-  cd testignore
-  /bin/ls | git check-ignore --stdin -n --verbose
-  cd ..
-  rm -rf ./testignore
-}
-
-function git-checkout-pr()
-{
-  if ! git config -l | grep -q "remote.origin.fetch=+refs/pull-requests/\*:refs/remotes/origin/pr/\*"; then
-    git config --add remote.origin.fetch +refs/pull-requests/*:refs/remotes/origin/pr/*
-  fi
-
-  git fetch --prune
-  git checkout pr/$1/merge
-}
-
-function tmx {
-    readonly SESSIONNAME=${1:?"The session must be specified."}
-    tmux has-session -t $SESSIONNAME &> /dev/null
-    if [ $? != 0 ]
-    then
-        tmux new-session -s $SESSIONNAME -n script -d 
-        #tmux send-keys -t $SESSIONNAME "cd ~/git" C-m
-    fi
-    tmux attach -t $SESSIONNAME
-}
-
 function start_agent {
     echo "Initializing new SSH agent..."
     cd ~/.ssh
@@ -129,6 +79,15 @@ function start_agent {
     chmod 600 "${SSH_ENV}"
     ssh-add id_rsa
     cd $OLDPWD
+}
+
+function connect_to_eks_cluster() {
+  export AWS_REGION=us-east-2
+  export AWS_PROFILE=nca
+  export EKS_CLUSTER_NAME=$(aws eks list-clusters --region $AWS_REGION | jq -r '.clusters[0]')
+  aws sts get-caller-identity && aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+  kubectl config set-context --current --namespace=$DEFAULT_NAMESPACE
+  chmod 600 ~/.kube/config
 }
 
 # start the ssh agent
@@ -151,15 +110,6 @@ zmodload -a complist
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 bindkey -v
 bindkey "^R" history-incremental-search-backward
-
-
-export AWS_REGION=us-east-2
-
-# AWS - connect to EKS cluster
-# export EKS_CLUSTER_NAME=$(aws eks list-clusters --region $AWS_REGION | jq -r '.clusters[0]')
-# aws sts get-caller-identity && aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
-# kubectl config set-context --current --namespace=$DEFAULT_NAMESPACE
-# chmod 600 ~/.kube/config
 
 # setup syntax highlighting (valid commands turn green as you type)
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
