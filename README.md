@@ -132,6 +132,7 @@ yaml | Yaml language support for vscode.
 * Syntax highlighting in the terminal, see [here](https://linuxhint.com/enable-syntax-highlighting-zsh/).
 * Supercharged 'cd' command, zsh-z aliased to 'j', see [here](https://github.com/agkozak/zsh-z).
 * useful git aliases (stored in ~/.gitconfig).
+* zsh-kubectl-prompt -- useful prompt to indicate cluster and namespace
 
 ## Useful git aliases (you can see them all in ~/.gitconfig)
 Name | What it does
