@@ -135,6 +135,7 @@ yaml | Yaml language support for vscode.
 * zsh-kubectl-prompt -- useful prompt to indicate cluster and namespace
 
 ## Useful git aliases (you can see them all in ~/.gitconfig)
+Also see the standard zsh git shortcuts [here](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index)
 Name | What it does
 :--- | :---
 git addall | Equivalent to git add . --all.
