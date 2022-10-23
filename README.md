@@ -133,8 +133,10 @@ vscode-base64 | Encode/decode base64 strings
 * Syntax highlighting in the terminal, see [here](https://linuxhint.com/enable-syntax-highlighting-zsh/).
 * Supercharged 'cd' command, zsh-z aliased to 'j', see [here](https://github.com/agkozak/zsh-z).
 * useful git aliases (stored in ~/.gitconfig).
+* zsh-kubectl-prompt -- useful prompt to indicate cluster and namespace
 
 ## Useful git aliases (you can see them all in ~/.gitconfig)
+Also see the standard zsh git shortcuts [here](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index)
 Name | What it does
 :--- | :---
 git addall | Equivalent to git add . --all.
