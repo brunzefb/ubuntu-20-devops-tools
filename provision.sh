@@ -163,6 +163,9 @@ function install_docker_in_docker() {
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   sudo apt update
   sudo apt install -y docker-ce docker-ce-cli containerd.io
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
+  newgrp docker
 }
 
 function fixup_locales() {
