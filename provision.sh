@@ -298,7 +298,8 @@ function install_vscode_extensions() {
   code --install-extension Tyriar.sort-lines
   code --install-extension ms-vscode-remote.remote-containers
   code --install-extension ms-vscode-remote.remote-ssh
-  }
+  code --install-extension adamhartford.vscode-base64
+}
 
 
 function finish_up() {

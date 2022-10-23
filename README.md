@@ -127,6 +127,7 @@ better-align | Allows alignment of code.
 tabspacer | Helps convert tabs to spaces and vice versa.
 git lens | Mostly useful for git diffs directly in vscode.
 yaml | Yaml language support for vscode.
+vscode-base64 | Encode/decode base64 strings
 
 ## Other features
 * Syntax highlighting in the terminal, see [here](https://linuxhint.com/enable-syntax-highlighting-zsh/).
