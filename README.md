@@ -38,10 +38,10 @@ Click 'start', then find code, start VSCode, add to Favorites on your toolbar
 ### Clone this repo
 In a terminal run:
 ```
-cd ~
-mkdir git
-cd git
-git clone https://github.com/friedrich-brunzema/ubuntu-20-devops-tools.git
+cd ~ && \
+mkdir git && \
+cd git && \
+git clone https://github.com/brunzefb/ubuntu-20-devops-tools.git
 ```
 
 ### Run script to install the tooling
