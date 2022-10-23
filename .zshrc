@@ -115,3 +115,6 @@ bindkey "^R" history-incremental-search-backward
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(direnv hook zsh)"
+
+# linode
+export KUBECONFIG=~/.kube/k8s-kubeconfig.yaml
