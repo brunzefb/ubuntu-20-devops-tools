@@ -275,6 +275,13 @@ function export_software_versions() {
 }
 
 function install_vscode_extensions() {
+  # this solves some issues with pasting
+  # with ctrl+v in the terminal. Note, you MUST
+  # use ctrl+shift+c to copy text from the terminal,
+  # other wise it will be interpreted as ctrl+c (break)
+  cp keybinding.json ~/.config/Code/User/keybindings.json
+
+  # we install the useful extensions here
   code --install-extension 4ops.packer
   code --install-extension adamhartford.vscode-base64
   code --install-extension bibhasdn.unique-lines

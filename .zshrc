@@ -53,7 +53,7 @@ function kg() {
       echo "$svc with pattern '$greptext' not found."
     else
       echo "$obj copied to clipboard."
-      printf $obj | clip
+      printf $obj | xclip -sel clip
     fi
   fi
 }

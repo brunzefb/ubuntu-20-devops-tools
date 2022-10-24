@@ -1,0 +1,22 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+    "key": "ctrl+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus && !accessibilityModeEnabled "
+    },
+    {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.clear"
+    },
+    {
+        "key": "ctrl+shift+unknown",
+        "command": "workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    }
+]
