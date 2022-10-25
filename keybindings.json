@@ -1,13 +1,18 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-    "key": "ctrl+v",
-    "command": "workbench.action.terminal.paste",
-    "when": "terminalFocus && !accessibilityModeEnabled "
+        "key": "ctrl+c",
+        "command": "workbench.action.terminal.copySelection",
+        "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
     },
     {
-    "key": "ctrl+k",
-    "command": "workbench.action.terminal.clear"
+        "key": "ctrl+v",
+        "command": "workbench.action.terminal.paste",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.clear"
     },
     {
         "key": "ctrl+shift+unknown",
@@ -16,7 +21,10 @@
     },
     {
         "key": "ctrl+shift+c",
-        "command": "-workbench.action.terminal.openNativeConsole",
-        "when": "!terminalFocus"
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "\u0003"
+        },
+        "when": "terminalFocus"
     }
 ]

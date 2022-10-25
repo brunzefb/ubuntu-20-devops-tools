@@ -26,6 +26,7 @@ function install_base_packages() {
       xclip \
       zsh \
       bc \
+      gnupg2 \
       netcat \
       apt-transport-https \
       ca-certificates \
