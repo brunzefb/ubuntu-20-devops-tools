@@ -68,7 +68,7 @@ function dpod() {
 function epod() {
   export pod=$(k get po | grep $1 | cut -f1 -d ' ' | head -n 1)
   echo $pod
-  kubectl exec -it $pod -- sh
+  kubectl exec -it $pod -- $2
 }
 
 function start_agent {

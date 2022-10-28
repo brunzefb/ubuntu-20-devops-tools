@@ -135,6 +135,11 @@ function install_krew_plugins() {
   kubectl krew install rbac-view
   kubectl krew install skew
   kubectl krew install view-secret
+  kubectl krew install df-pv
+  kubectl krew install pv-migrate
+  kubectl krew install ctx
+  kubectl krew install viewnode
+  kubectl krew install ttsum
 }
 
 function change_to_zsh_shell() {
