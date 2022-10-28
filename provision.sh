@@ -369,6 +369,7 @@ function main() {
   install_exa
   install_vs_code_extensions
   install_crossplane_cli
+  sudo snap install fluxctl --classic
   finish_up
 }
 
