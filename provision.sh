@@ -130,7 +130,6 @@ function install_krew_plugins() {
   kubectl krew install ingress-nginx
   kubectl krew install minio
   kubectl krew install node-shell
-  kubectl krew install prompt
   kubectl krew install score
   kubectl krew install rbac-view
   kubectl krew install skew
@@ -140,6 +139,7 @@ function install_krew_plugins() {
   kubectl krew install ctx
   kubectl krew install viewnode
   kubectl krew install ttsum
+  kubectl krew install unused-volumes
 }
 
 function change_to_zsh_shell() {
