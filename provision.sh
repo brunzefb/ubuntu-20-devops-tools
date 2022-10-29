@@ -317,7 +317,7 @@ function install_vscode_extensions() {
   code --install-extension adamhartford.vscode-base64
 }
 
-function install_crosslane_cli() {
+function install_crossplane_cli() {
   curl -sL https://raw.githubusercontent.com/crossplane/crossplane/master/install.sh | sh
   sudo mv kubectl-crossplane /usr/local/bin
 }

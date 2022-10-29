@@ -40,6 +40,6 @@
     },
     {
         "key":     "ctrl+shift+`",
-        "command": "workbench.view.explorer",
+        "command": "workbench.view.explorer"
     }
 ]
