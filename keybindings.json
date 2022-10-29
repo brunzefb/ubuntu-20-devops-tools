@@ -1,4 +1,5 @@
 // Place your key bindings in this file to override the defaults
+// https://stackoverflow.com/questions/45257525/make-ctrlc-copy-and-ctrlshiftc-interrupt-in-vscode-terminal
 [
     {
         "key": "ctrl+c",
@@ -15,7 +16,7 @@
         "command": "workbench.action.terminal.clear"
     },
     {
-        "key": "ctrl+shift+unknown",
+        "key": "ctrl+shift+c",
         "command": "workbench.action.terminal.openNativeConsole",
         "when": "!terminalFocus"
     },
@@ -26,5 +27,19 @@
           "text": "\u0003"
         },
         "when": "terminalFocus"
+    },
+    {
+        "key":     "ctrl+`",
+        "command": "workbench.action.terminal.focus",
+        "when":    "editorFocus"
+    },
+    {
+        "key":     "ctrl+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when":    "terminalFocus"
+    },
+    {
+        "key":     "ctrl+shift+`",
+        "command": "workbench.view.explorer",
     }
 ]
