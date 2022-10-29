@@ -326,13 +326,13 @@ function finish_up() {
   touch ~/.ssh/environment
   cp .zshrc ~/.zshrc
   cp $HOME/git/ubuntu-20-devops-tools/.gitconfig ~/.gitconfig
-  figlet "One-Time Setup for Git" -w 200
+  figlet "Git Setup" -w 200
   printf "Enter user name (e.g. John Doe) for git: "
   read -r username
   printf "Enter user email for git: "
   read -r email
-  sudo git config --global user.name "$username"
-  sudo git config --global user.email "$email"
+  git config --global user.name "$username"
+  git config --global user.email "$email"
   cp $HOME/git/ubuntu-20-devops-tools/inspiration.zsh-theme $HOME/.oh-my-zsh/themes/inspiration.zsh-theme
   ssh-keygen -b 2048 -t rsa -f $HOME/.ssh/id_rsa -q
   chmod 600 ~/.ssh/id_rsa
