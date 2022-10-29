@@ -100,6 +100,7 @@ docker | 20.10.17 | To manage containers and build images.
 exa | 010.1 | Prettier, clearer ls utility.
 crossplane cli | 1.10.0 | K8s cluster provisioning tool.
 fluxctl | n/a | Tool to manage flux deployments.
+keepass2 | 2.44 | Open source password manager
 
 ### Installed Krew plugins (subset of useful ones shown)
 Name | Comments

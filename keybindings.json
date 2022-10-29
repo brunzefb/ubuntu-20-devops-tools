@@ -41,5 +41,15 @@
     {
         "key":     "ctrl+shift+`",
         "command": "workbench.view.explorer"
+    },
+    {
+        "key": "Escape",
+        "command": "extension.jumpy-exit",
+        "when": "editorTextFocus && jumpy.isJumpyMode"
+    },
+    {
+        "key": "shift+enter",
+        "command": "extension.jumpy-word",
+        "when": "editorTextFocus"
     }
 ]

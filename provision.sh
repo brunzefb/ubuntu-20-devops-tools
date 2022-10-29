@@ -36,7 +36,8 @@ function install_base_packages() {
       libcurl4-gnutls-dev \
       libexpat1-dev \
       python3-pip \
-      gettext
+      gettext \
+      keypass2
 
   pip3 install virtualenvwrapper
 }
