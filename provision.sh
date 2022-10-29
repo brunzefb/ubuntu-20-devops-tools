@@ -324,6 +324,7 @@ function install_crossplane_cli() {
 
 function finish_up() {
   touch ~/.ssh/environment
+  cp .zshrc ~/.zshrc
   cp $HOME/git/ubuntu-20-devops-tools/.gitconfig ~/.gitconfig
   figlet "One-Time Setup for Git" -w 200
   printf "Enter user name (e.g. John Doe) for git: "
@@ -367,7 +368,7 @@ function main() {
   install_vim_pathogen
   install_docker_in_docker
   install_exa
-  install_vs_code_extensions
+  install_vscode_extensions
   install_crossplane_cli
   sudo snap install fluxctl --classic
   finish_up

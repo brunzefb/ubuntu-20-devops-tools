@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python3 
 from socket import gethostbyname, gaierror
 import time
 import sys
