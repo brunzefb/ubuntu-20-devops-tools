@@ -6,6 +6,7 @@ This repo contains support files to create a devops environment on Ubuntu 20.04.
 Please follow the instructions in this video to set up your VM. The
 instructions are for a Windows host, but should also work for Mac/Linux. I suggest watching this even if you know what you are doing.
 [Instructions to install Ubuntu on Oracle Virtual Box](https://www.youtube.com/watch?v=x5MhydijWmc)
+If using Virtual Box 7, I recommend NOT using the automatic install.
 
 ### Additional information needed for the Virtual Box setup
 [Link to downlod Ubuntu 20.04 ISO](https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso) 
@@ -97,6 +98,8 @@ oh-my-zsh | latest | Shell tooling and themes for zsh.
 kubescape | 2.0.149 | Open source K8s security scanner.
 docker | 20.10.17 | To manage containers and build images.
 exa | 010.1 | Prettier, clearer ls utility.
+crossplane cli | 1.10.0 | K8s cluster provisioning tool.
+fluxctl | n/a | Tool to manage flux deployments.
 
 ### Installed Krew plugins (subset of useful ones shown)
 Name | Comments
@@ -107,6 +110,13 @@ kubectl deprecations | Shows K8s API deprecations.
 kubectl node-shell | Allows you to 'ssh' into a worker node by name.
 kubectl skew | Shows versions of your cluster vs kubectl version.
 kubectl view-secret | Dumps secrets with built-in base64 decoding.
+kubectl score | Linter for manifests.
+kubectl df-pv | Shows disk free on persistent volumes.
+kubectl pv-migrate | Copy one PVC to another.
+kubectl ctx | Show and change the K8s context.
+kubectl viewnode | Shows pods running on nodes.
+kubectl ttsum | Shows tains/tolerations.
+kubectl unused-volumes | Shows unreferenced volumes.
 
 ##  Installed Visual Studio Code Extensions
 Name | What it does
