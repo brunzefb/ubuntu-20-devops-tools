@@ -285,7 +285,7 @@ function install_vscode_extensions() {
   # with ctrl+v in the terminal. Note, you MUST
   # use ctrl+shift+c to copy text from the terminal,
   # other wise it will be interpreted as ctrl+c (break)
-  cp keybinding.json ~/.config/Code/User/keybindings.json
+  cp keybindings.json ~/.config/Code/User/keybindings.json
 
   # we install the useful extensions here
   code --install-extension 4ops.packer
