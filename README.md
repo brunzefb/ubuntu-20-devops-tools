@@ -6,14 +6,19 @@ This repo contains support files to create a devops environment on Ubuntu 20.04.
 Please follow the instructions in this video to set up your VM. The
 instructions are for a Windows host, but should also work for Mac/Linux. I suggest watching this even if you know what you are doing.
 [Instructions to install Ubuntu on Oracle Virtual Box](https://www.youtube.com/watch?v=x5MhydijWmc)
-If using Virtual Box 7, I recommend NOT using the automatic install.
+If using Virtual Box 7, I recommend NOT using the automatic install mechanism.  You should choose the minimal install, as you can install desktop tools on an as-need basis.  Depeding on how tool projects move and publish resources, the script may fail as urls change, and downloads become unavailable.  As of October 2022, this script ran without errors with the -e flag set.
+You can of course use this script on bare-metal Ubuntu 20.04, and with minor modifications it will run on any debian linux flavour.
+
 
 ### Additional information needed for the Virtual Box setup
 [Link to downlod Ubuntu 20.04 ISO](https://releases.ubuntu.com/20.04/ubuntu-20.04.5-desktop-amd64.iso) 
 
-* 4096mb memory (more is OK)
-* 35Gb disk (more is OK)  OS and tools will use about 15gb
-* 2 Virtual CPU's (more is OK)
+* 4096mb memory (more is OK).
+* 35Gb disk (more is OK)  OS and tools will use about 15gb.
+* 2 Virtual CPU's (more is OK).
+* Video memory set to 64mb may be better for large screens.
+* Setting up bidirectional clipboard sharing in VirtualBox (YourVM)->Settings->General->Advanced->Shared Clipboard may be useful.  This will only work after the VMWare guest estensions are installed.
+* I suggest not scaling the display in VirtualBox, nor in Ubuntu's Display Settings, keep it at 100%.  Most applications (like Chrome, VSCode) offer a Zoom mode, which is preferrable from a performance standpoint.
 
 ### Todo before installing VirtualBox Guest additions
 In a terminal run: (Super+Ctrl+T to launch Terminal) 
