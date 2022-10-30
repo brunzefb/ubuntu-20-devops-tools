@@ -284,6 +284,7 @@ function install_vscode_extensions() {
   # with ctrl+v in the terminal. Note, you MUST
   # use ctrl+shift+c to copy text from the terminal,
   # other wise it will be interpreted as ctrl+c (break)
+  mkdir -p ~/.config/Code/User
   cp keybindings.json ~/.config/Code/User/keybindings.json
 
   # we install the useful extensions here
