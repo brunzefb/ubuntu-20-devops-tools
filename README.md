@@ -27,7 +27,7 @@ In a terminal run: (Ctrl+Alt+T to launch Terminal)
 sudo apt install -y build-essential dkms linux-headers-$(uname -r)
 ```
 
-### After completing the Virtual Box setup
+### After completing the Virtual Box setup (Make sure you reboot to active Guest Additions)
 ### Install git
 In a terminal run:
 ```
