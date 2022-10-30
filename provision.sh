@@ -70,7 +70,6 @@ function install_helm() {
   # helm3
   curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
   sudo bash get_helm.sh && rm get_helm.sh
-  helm plugin install https://github.com/hickeyma/helm-mapkubeapis
 }
 
 
@@ -112,7 +111,7 @@ function install_krew() {
   tar zxvf krew-linux_amd64.tar.gz
   KREW=./krew-linux_amd64
   "$KREW" install krew
-  sudo mv /$HOME/.krew/bin/kubectl-krew /usr/local/bin
+  sudo mv $HOME/.krew/bin/kubectl-krew /usr/local/bin
 }
 
 function install_packer() {
@@ -272,7 +271,7 @@ function export_software_versions() {
   export ARGO_CD_CLI=v2.3.1
   export ARGO_CLI=v3.2.6
   export REDIS_CLI=6.2.6
-  export SOLR_VERSION=8.11.1
+  export SOLR_VERSION=8.11.2
   export KUSTOMIZE=4.5.2
   export KUBESCAPE=v2.0.149
   export YQ_VERSION='v4.23.1'
