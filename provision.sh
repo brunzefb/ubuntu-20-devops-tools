@@ -372,6 +372,7 @@ function main() {
   install_crossplane_cli
   sudo snap install fluxctl --classic
   finish_up
+  figlet "Done"
 }
 
 main
