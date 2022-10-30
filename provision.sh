@@ -335,6 +335,7 @@ function finish_up() {
   git config --global user.email "$email"
   cp $HOME/git/ubuntu-20-devops-tools/inspiration.zsh-theme $HOME/.oh-my-zsh/themes/inspiration.zsh-theme
   ssh-keygen -b 2048 -t rsa -f $HOME/.ssh/id_rsa -q
+  compaudit | xargs chmod g-w,o-w
   chmod 600 ~/.ssh/id_rsa
 }
 
@@ -376,4 +377,3 @@ function main() {
 }
 
 main
-
