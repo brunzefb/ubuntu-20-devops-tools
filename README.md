@@ -18,10 +18,10 @@ You can of course use this script on bare-metal Ubuntu 20.04, and with minor mod
 * 2 Virtual CPU's (more is OK).
 * Video memory set to 64mb may be better for large screens.
 * Setting up bidirectional clipboard sharing in VirtualBox (YourVM)->Settings->General->Advanced->Shared Clipboard may be useful.  This will only work after the VMWare guest estensions are installed.
-* I suggest not scaling the display in VirtualBox, nor in Ubuntu's Display Settings, keep it at 100%.  Most applications (like Chrome, VSCode) offer a Zoom mode, which is preferrable from a performance standpoint.
+* I suggest not scaling the display in VirtualBox, nor in Ubuntu's Display Settings, keep it at 100%.  Most applications (like Chrome, VSCode, Terminal) offer a Zoom mode or Font Size, which is preferrable from a performance standpoint.
 
-### Todo before installing VirtualBox Guest additions
-In a terminal run: (Super+Ctrl+T to launch Terminal) 
+### Todo before installing VirtualBox Guest additions (inside Ubuntu)
+In a terminal run: (Ctrl+Alt+T to launch Terminal) 
 
 ```
 sudo apt install -y build-essential dkms linux-headers-$(uname -r)
@@ -79,8 +79,6 @@ python3 pip | To install python libs.
 zsh | Installs an alternate shell to bash.
 curl | Command line REST utility.
  
-
-
 ### Other devops tools that are installed:
 Tool Name | Version | Comments
 :---|:---|:---
@@ -105,7 +103,7 @@ docker | 20.10.17 | To manage containers and build images.
 exa | 010.1 | Prettier, clearer ls utility.
 crossplane cli | 1.10.0 | K8s cluster provisioning tool.
 fluxctl | n/a | Tool to manage flux deployments.
-keepass2 | 2.44 | Open source password manager
+keepass2 | 2.44 | Open source password manager.
 
 ### Installed Krew plugins (subset of useful ones shown)
 Name | Comments
@@ -136,7 +134,7 @@ open-in-terminal | Allows you to click on a folder, run the open in terminal com
 terraform | Terraform .hcl syntax highligher.
 vscode-kubernetes-tools | Gives you a right-click kubectl apply functionality from vs code explorer.
 python | Pyhon language support.
-subtle-brackets | Allows you to visualize which bracket matches with corresponding one in  unobtrusive way.
+subtle-brackets | Allows you to visualize which bracket matches with corresponding one in an unobtrusive way.
 vscode-hex dump | Shows your content as hex dump.
 jumpy | Allows crazy keyboard navigation.
 better-align | Allows alignment of code.
@@ -149,7 +147,7 @@ vscode-base64 | Encode/decode base64 strings
 * Syntax highlighting in the terminal, see [here](https://linuxhint.com/enable-syntax-highlighting-zsh/).
 * Supercharged 'cd' command, zsh-z aliased to 'j', see [here](https://github.com/agkozak/zsh-z).
 * useful git aliases (stored in ~/.gitconfig).
-* zsh-kubectl-prompt -- useful prompt to indicate cluster and namespace
+* zsh-kubectl-prompt -- useful prompt to indicate cluster and namespace. The blue prompt on the right gets out of the way when you type.  If you dislike the prompt, simply run unset RPROMPT in the terminal.
 
 ## Useful git aliases (you can see them all in ~/.gitconfig)
 Also see the standard zsh git shortcuts [here](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index)
@@ -168,7 +166,7 @@ git current | Shows the sha1 of the HEAD commit.
 git cob | Equivalent to git checkout -b.
 
 ## Git with ssh
-The script will create a ~/.ssh/id_rsa (private key) and ~/.ssh/id_rsa.pub (public key). The .zshrc will start an ssh agent and load the key, but for things to work you must upload your public key to Github or git provider. More info about github and ssh can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+The script will create a ~/.ssh/id_rsa (private key) and ~/.ssh/id_rsa.pub (public key). The .zshrc will start an ssh agent and load the key, but for things to work you must upload your public key to Github or git provider. More info about github and ssh can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).  To use your own key, just edit the ~/.ssh/id_rsa file, and replace it with your own personal private key content.
 
 ## Opening a ZSH shell by default in vscode.
 VSCode will open a bash shell by default.  You can either type zsh to get the zshell one.
