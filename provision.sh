@@ -37,7 +37,7 @@ function install_base_packages() {
       libexpat1-dev \
       python3-pip \
       gettext \
-      keypass2
+      keepass2
 
   pip3 install virtualenvwrapper
 }
