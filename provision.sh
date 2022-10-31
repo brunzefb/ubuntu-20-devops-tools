@@ -169,7 +169,6 @@ function install_docker_in_docker() {
   sudo apt update
   sudo apt install -y docker-ce docker-ce-cli containerd.io
   sudo usermod -aG docker $USER
-  newgrp docker
 }
 
 function fixup_locales() {
